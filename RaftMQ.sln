@@ -3,11 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34916.146
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaftMQ", "RaftMQ\RaftMQ.csproj", "{78AB42FD-53B0-4807-8DA2-083E2BD306F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RaftMQ", "RaftMQ\RaftMQ.csproj", "{78AB42FD-53B0-4807-8DA2-083E2BD306F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaftMQ.Rabbit", "RaftMQ.Rabbit\RaftMQ.Rabbit.csproj", "{D0F2CD00-234F-4160-8A6E-1887FC9A5CC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RaftMQ.Rabbit", "RaftMQ.Rabbit\RaftMQ.Rabbit.csproj", "{D0F2CD00-234F-4160-8A6E-1887FC9A5CC0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaftMQ.Tests", "RaftMQ.Tests\RaftMQ.Tests.csproj", "{661E7748-5A6D-40B6-A9C8-4C74481DD690}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RaftMQ.Tests", "RaftMQ.Tests\RaftMQ.Tests.csproj", "{661E7748-5A6D-40B6-A9C8-4C74481DD690}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{75650E33-5523-44C1-8C08-1AC78B8A81E7}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
