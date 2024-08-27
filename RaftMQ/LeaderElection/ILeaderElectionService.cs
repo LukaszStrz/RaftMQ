@@ -5,7 +5,7 @@ using System.Text;
 
 namespace RaftMQ.LeaderElection
 {
-    internal interface ILeaderElectionService
+    public interface ILeaderElectionService
     {
         void Configure(IRaftServiceConfiguration config);
     }

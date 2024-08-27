@@ -1,25 +1,22 @@
 ﻿using Microsoft.Extensions.Logging;
 using RaftMQ.LeaderElection;
+using RaftMQ.Logging;
 using System;
 
 namespace RaftMQ.Service
 {
-    internal class RaftService : IRaftService
+    public class RaftService(ILeaderElectionService leaderElectionService, ILogger<RaftService> logger) : IRaftService
     {
         private bool disposedValue;
 
         private IRaftServiceConfiguration config;
-        private readonly ILeaderElectionService leaderElectionService;
-        private readonly ILogger<RaftService> logger;
-
-        public RaftService(ILeaderElectionService leaderElectionService, ILogger<RaftService> logger)
-        {
-            this.leaderElectionService = leaderElectionService ?? throw new ArgumentNullException(nameof(leaderElectionService));
-            this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
-        }
+        private readonly ILeaderElectionService leaderElectionService = leaderElectionService ?? throw new ArgumentNullException(nameof(leaderElectionService));
+        private readonly ILogger<RaftService> logger = logger ?? throw new ArgumentNullException(nameof(logger));
 
         public void Start(IRaftServiceConfiguration config)
         {
+            logger.LogServiceStart(nameof(RaftService));
+
             this.config = config;
 
             leaderElectionService.Configure(config);
@@ -27,8 +24,15 @@ namespace RaftMQ.Service
             throw new NotImplementedException();
         }
 
+        public void Stop()
+        {
+            logger.LogServiceStop(nameof(RaftService));
+        }
+
         protected virtual void Dispose(bool disposing)
         {
+            Stop();
+
             if (!disposedValue)
             {
                 if (disposing)

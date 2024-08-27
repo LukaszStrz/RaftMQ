@@ -12,6 +12,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{880F7A6E-2EC9-4AB5-A83D-CC883CB4BDB5}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		Directory.Build.props = Directory.Build.props
 		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
@@ -21,6 +22,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaftMQ.ExampleConsole", "Examples\RaftMQ.ExampleConsole\RaftMQ.ExampleConsole.csproj", "{1A458255-698B-479C-ABB6-98055DFE3A68}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaftMQ.Transport", "RaftMQ.Transport\RaftMQ.Transport.csproj", "{61B06E4F-6BDC-4398-BE82-2AD35DA173DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaftMQ.Logging", "RaftMQ.Logging\RaftMQ.Logging.csproj", "{34629C16-966E-4008-98A5-BF9DEF79CB60}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,6 +51,10 @@ Global
 		{61B06E4F-6BDC-4398-BE82-2AD35DA173DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61B06E4F-6BDC-4398-BE82-2AD35DA173DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61B06E4F-6BDC-4398-BE82-2AD35DA173DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34629C16-966E-4008-98A5-BF9DEF79CB60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34629C16-966E-4008-98A5-BF9DEF79CB60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34629C16-966E-4008-98A5-BF9DEF79CB60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34629C16-966E-4008-98A5-BF9DEF79CB60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
