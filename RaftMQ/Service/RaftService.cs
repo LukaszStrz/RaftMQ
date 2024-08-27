@@ -21,7 +21,7 @@ namespace RaftMQ.Service
 
             this.config = config;
 
-            leaderElectionService.Configure(config);
+            leaderElectionService.Start(config);
         }
 
         public void Stop()
