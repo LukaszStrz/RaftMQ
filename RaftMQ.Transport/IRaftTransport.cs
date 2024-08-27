@@ -4,7 +4,7 @@ using System.Text;
 
 namespace RaftMQ.Transport
 {
-    public interface IRaftTransport
+    public interface IRaftTransport : IDisposable
     {
     }
 }

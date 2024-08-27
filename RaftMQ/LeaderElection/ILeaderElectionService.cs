@@ -1,10 +1,12 @@
-﻿using System;
+﻿using RaftMQ.Service;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace RaftMQ.LeaderElection
 {
-    internal class ILeaderElectionService
+    internal interface ILeaderElectionService
     {
+        void Configure(IRaftServiceConfiguration config);
     }
 }
