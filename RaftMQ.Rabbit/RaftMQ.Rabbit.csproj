@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\RaftMQ.Transport\RaftMQ.Transport.csproj" />
     <ProjectReference Include="..\RaftMQ\RaftMQ.csproj" />
   </ItemGroup>
 
