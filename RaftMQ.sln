@@ -9,12 +9,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RaftMQ.Rabbit", "RaftMQ.Rab
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RaftMQ.Tests", "RaftMQ.Tests\RaftMQ.Tests.csproj", "{661E7748-5A6D-40B6-A9C8-4C74481DD690}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{75650E33-5523-44C1-8C08-1AC78B8A81E7}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{880F7A6E-2EC9-4AB5-A83D-CC883CB4BDB5}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		Directory.Build.props = Directory.Build.props
 		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{A7C22534-1FA2-4279-A5BF-AC3B677812E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaftMQ.ExampleConsole", "Examples\RaftMQ.ExampleConsole\RaftMQ.ExampleConsole.csproj", "{1A458255-698B-479C-ABB6-98055DFE3A68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaftMQ.Transport", "RaftMQ.Transport\RaftMQ.Transport.csproj", "{61B06E4F-6BDC-4398-BE82-2AD35DA173DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaftMQ.Logging", "RaftMQ.Logging\RaftMQ.Logging.csproj", "{34629C16-966E-4008-98A5-BF9DEF79CB60}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{030B320D-5A16-4312-A5E5-24D9F7875693}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,9 +45,25 @@ Global
 		{661E7748-5A6D-40B6-A9C8-4C74481DD690}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{661E7748-5A6D-40B6-A9C8-4C74481DD690}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{661E7748-5A6D-40B6-A9C8-4C74481DD690}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A458255-698B-479C-ABB6-98055DFE3A68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A458255-698B-479C-ABB6-98055DFE3A68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A458255-698B-479C-ABB6-98055DFE3A68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A458255-698B-479C-ABB6-98055DFE3A68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61B06E4F-6BDC-4398-BE82-2AD35DA173DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61B06E4F-6BDC-4398-BE82-2AD35DA173DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61B06E4F-6BDC-4398-BE82-2AD35DA173DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61B06E4F-6BDC-4398-BE82-2AD35DA173DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34629C16-966E-4008-98A5-BF9DEF79CB60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34629C16-966E-4008-98A5-BF9DEF79CB60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34629C16-966E-4008-98A5-BF9DEF79CB60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34629C16-966E-4008-98A5-BF9DEF79CB60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{661E7748-5A6D-40B6-A9C8-4C74481DD690} = {030B320D-5A16-4312-A5E5-24D9F7875693}
+		{1A458255-698B-479C-ABB6-98055DFE3A68} = {A7C22534-1FA2-4279-A5BF-AC3B677812E5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EC215BFF-10DD-46BB-B3C1-E3CAF2B569E6}
