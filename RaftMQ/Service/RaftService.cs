@@ -13,6 +13,8 @@ namespace RaftMQ.Service
         private readonly ILeaderElectionService leaderElectionService = leaderElectionService ?? throw new ArgumentNullException(nameof(leaderElectionService));
         private readonly ILogger<RaftService> logger = logger ?? throw new ArgumentNullException(nameof(logger));
 
+        public ServiceState State {  get; private set; } = ServiceState.UNREGISTERED;
+
         public void Start(IRaftServiceConfiguration config)
         {
             logger.LogServiceStart(nameof(RaftService));
@@ -20,8 +22,6 @@ namespace RaftMQ.Service
             this.config = config;
 
             leaderElectionService.Configure(config);
-
-            throw new NotImplementedException();
         }
 
         public void Stop()

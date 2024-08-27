@@ -8,7 +8,7 @@ namespace RaftMQ
     {
         public static void AddRabbitMQ(this IServiceCollection services)
         {
-            services.AddScoped<ILeaderElectionService, LeaderElectionService>();
+            services.AddSingleton<ILeaderElectionService, LeaderElectionService>();
             services.AddSingleton<IRaftService, RaftService>();
         }
     }

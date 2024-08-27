@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaftMQ.Transport", "RaftMQ.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaftMQ.Logging", "RaftMQ.Logging\RaftMQ.Logging.csproj", "{34629C16-966E-4008-98A5-BF9DEF79CB60}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{030B320D-5A16-4312-A5E5-24D9F7875693}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,6 +62,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{661E7748-5A6D-40B6-A9C8-4C74481DD690} = {030B320D-5A16-4312-A5E5-24D9F7875693}
 		{1A458255-698B-479C-ABB6-98055DFE3A68} = {A7C22534-1FA2-4279-A5BF-AC3B677812E5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

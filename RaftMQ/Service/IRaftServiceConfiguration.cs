@@ -8,5 +8,6 @@ namespace RaftMQ.Service
     public interface IRaftServiceConfiguration
     {
         IRaftTransport Transport { get; }
+        TimeSpan ElectionTimeout { get; }
     }
 }
