@@ -20,7 +20,7 @@ namespace RaftMQ.Tests
             raftService.Start(raftServiceConfigurationMock.Object);
 
             // Assert
-            leaderElectionServiceMock.Verify(m => m.Start(It.IsAny<IRaftServiceConfiguration>()), Times.Once());
+            leaderElectionServiceMock.Verify(m => m.Start(It.IsAny<IRaftServiceConfiguration>(), It.IsAny<Guid>()), Times.Once());
         }
     }
 }

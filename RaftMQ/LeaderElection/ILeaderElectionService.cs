@@ -7,7 +7,7 @@ namespace RaftMQ.LeaderElection
 {
     public interface ILeaderElectionService
     {
-        void Start(IRaftServiceConfiguration config);
+        void Start(IRaftServiceConfiguration config, Guid uid);
 
         int Term { get; }
     }

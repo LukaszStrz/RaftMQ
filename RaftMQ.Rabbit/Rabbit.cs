@@ -5,6 +5,21 @@ namespace RaftMQ.Rabbit
 {
     public class Rabbit : IRaftTransport
     {
+        public event IRaftTransport.RequestVoteMessageReceivedHandler RequestVoteMessageReceived;
+        public event IRaftTransport.VoteMessageReceivedHandler VoteMessageReceived;
+
+        public void SendRequestVoteMessage(int term)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SendVoteMessage(Guid target)
+        {
+            throw new NotImplementedException();
+        }
+
+        #region IDisposable
+
         private bool disposedValue;
 
         protected virtual void Dispose(bool disposing)
@@ -35,5 +50,8 @@ namespace RaftMQ.Rabbit
             Dispose(disposing: true);
             GC.SuppressFinalize(this);
         }
+
+        #endregion IDisposable
+
     }
 }
