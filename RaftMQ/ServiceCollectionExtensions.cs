@@ -8,7 +8,7 @@ namespace RaftMQ
 {
     public static class ServiceCollectionExtensions
     {
-        public static void AddRabbitMQ<TTransport>(this IServiceCollection services) where TTransport : class, IRaftTransport
+        public static void AddRaftMQ<TTransport>(this IServiceCollection services) where TTransport : class, IRaftTransport
         {
             services.AddSingleton<ILeaderElectionService, LeaderElectionService>();
             services.AddSingleton<IRaftService, RaftService>();
