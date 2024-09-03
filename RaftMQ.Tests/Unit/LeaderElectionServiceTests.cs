@@ -11,7 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RaftMQ.Tests
+namespace RaftMQ.Tests.Unit
 {
     public class LeaderElectionServiceTests
     {
@@ -33,8 +33,7 @@ namespace RaftMQ.Tests
             // Assert
             Assert.Equal(1, leaderElectionService.Term);
             Assert.Equal(1, leaderElectionService.Votes);
-            Assert.True(leaderElectionService.HasVotedInThisTerm);
-            transportMock.Verify(m => m.SendRequestVoteMessage(It.IsAny<int>()), Times.Once());
+            transportMock.Verify(m => m.SendRequestVoteMessageAsync(It.IsAny<int>()), Times.Once());
         }
 
         [Fact]

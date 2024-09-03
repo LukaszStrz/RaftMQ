@@ -7,6 +7,27 @@ namespace RaftMQ.Service
 {
     public class RaftService(ILeaderElectionService leaderElectionService, ILogger<RaftService> logger) : IRaftService
     {
+        private IRaftServiceConfiguration config;
+        private readonly ILeaderElectionService leaderElectionService = leaderElectionService ?? throw new ArgumentNullException(nameof(leaderElectionService));
+        private readonly ILogger<RaftService> logger = logger ?? throw new ArgumentNullException(nameof(logger));
+
+        public ServiceState State { get; private set; } = ServiceState.UNREGISTERED;
+        public Guid UID { get; private set; } = Guid.NewGuid();
+
+        public void Start(IRaftServiceConfiguration config)
+        {
+            logger.LogServiceStart(nameof(RaftService));
+
+            this.config = config;
+
+            leaderElectionService.Start(config, UID);
+        }
+
+        public void Stop()
+        {
+            logger.LogServiceStop(nameof(RaftService));
+        }
+
         #region IDisposable
 
         private bool disposedValue;
@@ -19,7 +40,7 @@ namespace RaftMQ.Service
             {
                 if (disposing)
                 {
-                    config.Transport.Dispose();
+                    config?.Transport?.Dispose();
                 }
 
                 // TODO: free unmanaged resources (unmanaged objects) and override finalizer
@@ -44,25 +65,5 @@ namespace RaftMQ.Service
 
         #endregion IDisposable
 
-        private IRaftServiceConfiguration config;
-        private readonly ILeaderElectionService leaderElectionService = leaderElectionService ?? throw new ArgumentNullException(nameof(leaderElectionService));
-        private readonly ILogger<RaftService> logger = logger ?? throw new ArgumentNullException(nameof(logger));
-
-        public ServiceState State { get; private set; } = ServiceState.UNREGISTERED;
-        public Guid UID { get; private set; } = Guid.NewGuid();
-
-        public void Start(IRaftServiceConfiguration config)
-        {
-            logger.LogServiceStart(nameof(RaftService));
-
-            this.config = config;
-
-            leaderElectionService.Start(config, UID);
-        }
-
-        public void Stop()
-        {
-            logger.LogServiceStop(nameof(RaftService));
-        }
     }
 }

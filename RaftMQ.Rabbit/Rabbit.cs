@@ -1,11 +1,12 @@
 ﻿using RaftMQ.Transport;
 using System;
+using System.Threading.Tasks;
 
 namespace RaftMQ.Rabbit
 {
     public class RabbitTransport : IRaftTransport
     {
-        public event IRaftTransport.RequestVoteMessageReceivedHandler RequestVoteMessageReceived;
+        public event IRaftTransport.RequestVoteMessageReceivedHandlerAsync RequestVoteMessageReceivedAsync;
         public event IRaftTransport.VoteMessageReceivedHandler VoteMessageReceived;
 
         public void SendRequestVoteMessage(int term)
@@ -54,6 +55,16 @@ namespace RaftMQ.Rabbit
             // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
             Dispose(disposing: true);
             GC.SuppressFinalize(this);
+        }
+
+        public Task SendRequestVoteMessageAsync(int term)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task SendVoteMessageAsync(int term, Guid target)
+        {
+            throw new NotImplementedException();
         }
 
 

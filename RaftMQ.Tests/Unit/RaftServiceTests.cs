@@ -3,7 +3,7 @@ using Moq;
 using RaftMQ.LeaderElection;
 using RaftMQ.Service;
 
-namespace RaftMQ.Tests
+namespace RaftMQ.Tests.Unit
 {
     public class RaftServiceTests
     {
