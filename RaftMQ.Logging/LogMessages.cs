@@ -6,17 +6,25 @@ namespace RaftMQ.Logging
     public static partial class LogMessages
     {
         [LoggerMessage(
-            Message = "RMQ-I0001 Starting service: {serviceName}",
+            Message = "Starting service: {serviceName}",
             Level = LogLevel.Information)]
         public static partial void LogServiceStart(
             this ILogger logger,
             string serviceName);
 
         [LoggerMessage(
-            Message = "RMQ-I0001 Stopping service: {serviceName}",
+            Message = "Stopping service: {serviceName}",
             Level = LogLevel.Information)]
         public static partial void LogServiceStop(
             this ILogger logger,
             string serviceName);
+
+        [LoggerMessage(
+            Message = "Starting election: Term={term}; Timeout={timeout}",
+            Level = LogLevel.Debug)]
+        public static partial void LogElectionStart(
+            this ILogger logger,
+            int term,
+            int timeout);
     }
 }

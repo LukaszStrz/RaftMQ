@@ -7,13 +7,12 @@ namespace RaftMQ.Service
 {
     public class RaftService(ILeaderElectionService leaderElectionService, ILogger<RaftService> logger) : IRaftService
     {
-        private bool disposedValue;
-
         private IRaftServiceConfiguration config;
         private readonly ILeaderElectionService leaderElectionService = leaderElectionService ?? throw new ArgumentNullException(nameof(leaderElectionService));
         private readonly ILogger<RaftService> logger = logger ?? throw new ArgumentNullException(nameof(logger));
 
-        public ServiceState State {  get; private set; } = ServiceState.UNREGISTERED;
+        public ServiceState State { get; private set; } = ServiceState.UNREGISTERED;
+        public Guid UID { get; private set; } = Guid.NewGuid();
 
         public void Start(IRaftServiceConfiguration config)
         {
@@ -21,13 +20,17 @@ namespace RaftMQ.Service
 
             this.config = config;
 
-            leaderElectionService.Configure(config);
+            leaderElectionService.Start(config, UID);
         }
 
         public void Stop()
         {
             logger.LogServiceStop(nameof(RaftService));
         }
+
+        #region IDisposable
+
+        private bool disposedValue;
 
         protected virtual void Dispose(bool disposing)
         {
@@ -37,7 +40,7 @@ namespace RaftMQ.Service
             {
                 if (disposing)
                 {
-                    config.Transport.Dispose();
+                    config?.Transport?.Dispose();
                 }
 
                 // TODO: free unmanaged resources (unmanaged objects) and override finalizer
@@ -59,5 +62,8 @@ namespace RaftMQ.Service
             Dispose(disposing: true);
             GC.SuppressFinalize(this);
         }
+
+        #endregion IDisposable
+
     }
 }

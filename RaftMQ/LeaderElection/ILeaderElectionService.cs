@@ -5,8 +5,14 @@ using System.Text;
 
 namespace RaftMQ.LeaderElection
 {
-    public interface ILeaderElectionService
+    public interface ILeaderElectionService : IDisposable
     {
-        void Configure(IRaftServiceConfiguration config);
+        void Start(IRaftServiceConfiguration config, Guid uid);
+
+        void Stop();
+
+        int Term { get; }
+
+        int Votes { get; }
     }
 }
